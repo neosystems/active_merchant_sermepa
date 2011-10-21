@@ -29,7 +29,8 @@ module ActiveMerchant #:nodoc:
           when :test
             self.service_test_url
           else
-            raise StandardError, "Integration mode set to an invalid value: #{mode}"
+            self.service_production_url
+            #raise StandardError, "Integration mode set to an invalid value: #{mode}"
           end
         end
 
@@ -41,7 +42,8 @@ module ActiveMerchant #:nodoc:
           when :test
             self.operations_test_url
           else
-            raise StandardError, "Integration mode set to an invalid value: #{mode}"
+            self.operations_production_url
+            #raise StandardError, "Integration mode set to an invalid value: #{mode}"
           end
 
         end
